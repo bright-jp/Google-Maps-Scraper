@@ -45,7 +45,7 @@
     python main.py
     ```
 ### 出力
-スクレイパーは結果を [free_scraper_output.json](https://github.com/luminati-io/Google-Maps-Scraper/blob/main/sample_data/free_scraper_output.json) に保存します。内容は次のとおりです:
+スクレイパーは結果を [free_scraper_output.json](https://github.com/bright-jp/Google-Maps-Scraper/blob/main/sample_data/free_scraper_output.json) に保存します。内容は次のとおりです:
 ```json
 {
     "reviewer_name": "Jacqueline",
@@ -88,9 +88,9 @@ Google Maps からのデータのスクレイピングは非常に難しい場�
 ## Google Maps Scraper API の使用
 URL を指定するだけで、詳細な Google Maps レビューを収集できます。
 
-<img width="700" alt="bright-data-web-scraper-api-google-maps-reviews" src="https://github.com/luminati-io/Google-Maps-Scraper/blob/main/google-maps-review-example.PNG">
+<img width="700" alt="bright-data-web-scraper-api-google-maps-reviews" src="https://github.com/bright-jp/Google-Maps-Scraper/blob/main/google-maps-review-example.PNG">
 
-> Google Maps Scraper API のセットアップに関する詳細ガイドは、[Step-by-Step Setup Guide](https://github.com/luminati-io/Google-Maps-Scraper/blob/main/scraper_api_setup.md#setting-up-google-maps-scraper-api) をご確認ください。
+> Google Maps Scraper API のセットアップに関する詳細ガイドは、[Step-by-Step Setup Guide](https://github.com/bright-jp/Google-Maps-Scraper/blob/main/scraper_api_setup.md#setting-up-google-maps-scraper-api) をご確認ください。
 
 **主な入力パラメータ:**
 
@@ -133,7 +133,7 @@ URL を指定するだけで、詳細な Google Maps レビューを収集でき
     }
   }
 ```
-出力全体は、[このサンプルJSONファイル](https://github.com/luminati-io/Google-Maps-Scraper/blob/main/sample_data/api_scraper_output.json) をダウンロードして確認できます。
+出力全体は、[このサンプルJSONファイル](https://github.com/bright-jp/Google-Maps-Scraper/blob/main/sample_data/api_scraper_output.json) をダウンロードして確認できます。
 
 **コード例:**
 
@@ -235,12 +235,12 @@ if __name__ == "__main__":
 ```
 
 **コードの仕組み:**
-1. **API Token が必要:** まず API token が必要です。まだお持ちでない場合は、[Google Maps Scraper API setup guide](https://github.com/luminati-io/Google-Maps-Scraper/blob/main/scraper_api_setup.md#setting-up-google-maps-scraper-api) に従ってください。
+1. **API Token が必要:** まず API token が必要です。まだお持ちでない場合は、[Google Maps Scraper API setup guide](https://github.com/bright-jp/Google-Maps-Scraper/blob/main/scraper_api_setup.md#setting-up-google-maps-scraper-api) に従ってください。
 2. **データ収集の開始:** コードに API token を渡すと、指定したパラメータでデータ収集を開始します。これにより、リクエストを追跡するために使用する `snapshot_id` が返されます。
 3. **結果を待機:** データ収集の完了まで数分かかります。この間、コードは `snapshot_id` のステータスを継続的に確認します:
     - ステータス "running" = データはまだ収集中です
     - ステータス "ready" = データ収集が完了し、JSON ファイルに保存されました
-4. **追加パラメータ:** `_trigger_collection` 関数に追加のパラメータを指定して、データ収集をカスタマイズできます。利用可能なパラメータや各種データ配信方法については、[次のセクション](https://github.com/luminati-io/Google-Maps-Scraper?tab=readme-ov-file#customizing-data-collection-with-api-parameters) をご確認ください。
+4. **追加パラメータ:** `_trigger_collection` 関数に追加のパラメータを指定して、データ収集をカスタマイズできます。利用可能なパラメータや各種データ配信方法については、[次のセクション](https://github.com/bright-jp/Google-Maps-Scraper?tab=readme-ov-file#customizing-data-collection-with-api-parameters) をご確認ください。
 
 ### APIパラメータでデータ収集をカスタマイズする
 次の API パラメータを使用して、データ収集をカスタマイズできます:
