@@ -1,36 +1,36 @@
-# Google Maps Scraper
+# Google Maps スクレイパー
 
-## Table of Contents
-- [Free Google Maps Scraper](#free-google-maps-scraper)
-  - [Setup and Installation](#setup-and-installation)
-  - [How to Use the Scraper](#how-to-use-the-scraper)
-  - [Output](#output)
-- [Common Scraping Challenges](#common-scraping-challenges)
-- [Solution: Bright Data Google Maps Scraper API](#solution-bright-data-google-maps-scraper-api)
-  - [Using Google Maps Scraper API](#using-google-maps-scraper-api)
-  - [Customizing Data Collection with API Parameters](#customizing-data-collection-with-api-parameters)
+## 目次
+- [無料のGoogle Maps スクレイパー](#free-google-maps-scraper)
+  - [セットアップとインストール](#setup-and-installation)
+  - [スクレイパーの使用方法](#how-to-use-the-scraper)
+  - [出力](#output)
+- [スクレイピングでよくある課題](#common-scraping-challenges)
+- [解決策: Bright Data Google Maps Scraper API](#solution-bright-data-google-maps-scraper-api)
+  - [Google Maps Scraper API の使用](#using-google-maps-scraper-api)
+  - [APIパラメータでデータ収集をカスタマイズする](#customizing-data-collection-with-api-parameters)
 
-## Free Google Maps Scraper
-Use this free scraper to extract business reviews from Google Maps. You can retrieve details about reviewers, ratings, review text, photos, and more in just a few steps.
+## 無料のGoogle Maps スクレイパー
+この無料スクレイパーを使用して、Google Maps からビジネスのレビューを抽出できます。数ステップで、レビュー投稿者の詳細、評価、レビュー本文、写真などを取得できます。
 
-### Setup and Installation
-Before diving in, make sure you have these prerequisites installed:
+### セットアップとインストール
+始める前に、次の前提条件がインストールされていることを確認してください:
 - Python 3.9+
-- Playwright (for browser automation)
+- Playwright（ブラウザ自動化用）
 
-Follow these steps to get everything set up:
-1. Clone the repository to your local machine
-2. Navigate to the `free-scraper` directory
-3. Install the required dependencies:
+次の手順でセットアップします:
+1. リポジトリをローカルマシンにクローンします
+2. `free-scraper` ディレクトリに移動します
+3. 必要な依存関係をインストールします:
 
     ```bash
     pip install playwright
     playwright install
     ```
-### How to Use the Scraper
-Let's walk through how to use the scraper:
+### スクレイパーの使用方法
+スクレイパーの使い方を順に説明します:
 
-1. Open `main.py` and add your target Google Maps URLs:
+1. `main.py` を開き、ターゲットの Google Maps URL を追加します:
 
     ```python
     urls = [
@@ -39,13 +39,13 @@ Let's walk through how to use the scraper:
             # Add as many URLs as you need
         ]
     ```
-2. Run the script using:
+2. 次のコマンドでスクリプトを実行します:
 
     ```bash
     python main.py
     ```
-### Output
-The scraper will save the results in [free_scraper_output.json](https://github.com/luminati-io/Google-Maps-Scraper/blob/main/sample_data/free_scraper_output.json), containing:
+### 出力
+スクレイパーは結果を [free_scraper_output.json](https://github.com/luminati-io/Google-Maps-Scraper/blob/main/sample_data/free_scraper_output.json) に保存します。内容は次のとおりです:
 ```json
 {
     "reviewer_name": "Jacqueline",
@@ -62,44 +62,44 @@ The scraper will save the results in [free_scraper_output.json](https://github.c
 }
 ```
 
-Each review entry contains:
-- **Reviewer Details**: Name, profile link, and avatar image
-- **Review Content**: Star rating, date posted, and full review text
-- **Media**: URLs of any attached photos
-- **Engagement**: Number of likes the review received
+各レビューのエントリには次が含まれます:
+- **レビュー投稿者の詳細**: 名前、プロフィールリンク、アバター画像
+- **レビュー内容**: 星評価、投稿日、レビュー本文（全文）
+- **メディア**: 添付写真がある場合のURL
+- **エンゲージメント**: レビューが獲得した「いいね」の数
 
-## Common Scraping Challenges
-Scraping data from Google Maps can be quite challenging. Here are some common issues you may encounter:
-1. **Dynamic Content Loading:** Google Maps uses a dynamic loading mechanism where reviews are fetched via XHR/API calls as the user scrolls. Without proper handling of these dynamic requests and waiting for content to load, scrapers may only capture partial data.
-2. **DOM Structure Changes:** Google frequently updates their DOM structure, class names, and data attributes. This requires regular maintenance of scraping logic to adapt to structural changes.
-3. **Rate Limiting and Detection:** Scraping Google Maps can trigger anti-bot defenses, which may result in rate limiting or IP bans. 
+## スクレイピングでよくある課題
+Google Maps からのデータのスクレイピングは非常に難しい場合があります。よく遭遇する問題は次のとおりです:
+1. **動的コンテンツの読み込み:** Google Maps は、ユーザーがスクロールするとレビューが XHR/API 呼び出し経由で取得される動的読み込みの仕組みを使用しています。これらの動的リクエストを適切に処理し、コンテンツの読み込みを待機しないと、スクレイパーは部分的なデータしか取得できない可能性があります。
+2. **DOM構造の変更:** Google は DOM 構造、class 名、data 属性を頻繁に更新します。そのため、構造変更に適応するようスクレイピングロジックを定期的にメンテナンスする必要があります。
+3. **レート制限と検知:** Google Maps のスクレイピングはアンチボット防御を作動させる可能性があり、その結果、レート制限または IPアドレス のBANが発生する場合があります。 
 
-## Solution: Bright Data Google Maps Scraper API
-If you need reliable, large-scale data extraction, use [Bright Data Google Maps Scraper API](https://brightdata.com/products/serp-api/google-search/maps). Here's why it works better:
-- No proxy management is needed
-- Scrape from any location worldwide
-- Access to 72M+ real IPs across 195 countries
-- Multiple data delivery options (S3, Cloud Storage, etc.)
-- GDPR and CCPA compliant
-- 24/7 technical support
+## 解決策: Bright Data Google Maps Scraper API
+信頼性の高い大規模なデータ抽出が必要な場合は、[Bright Data Google Maps Scraper API](https://brightdata.jp/products/serp-api/google-search/maps) を使用してください。より優れている理由は次のとおりです:
+- プロキシ管理が不要です
+- 世界中の任意の場所からスクレイピングできます
+- 195か国にわたる 72M+ の実在IPにアクセスできます
+- 複数のデータ配信オプション（S3、Cloud Storage など）
+- GDPR および CCPA 準拠
+- 24/7 のテクニカルサポート
 
-Plus, you get **20 free API calls** to test it out.
+さらに、試用のために **API呼び出し20回が無料** で利用できます。
 
-## Using Google Maps Scraper API
-You can collect detailed Google Maps reviews by simply providing a URL.
+## Google Maps Scraper API の使用
+URL を指定するだけで、詳細な Google Maps レビューを収集できます。
 
 <img width="700" alt="bright-data-web-scraper-api-google-maps-reviews" src="https://github.com/luminati-io/Google-Maps-Scraper/blob/main/google-maps-review-example.PNG">
 
-> For a detailed guide on setting up the Google Maps Scraper API, check our [Step-by-Step Setup Guide](https://github.com/luminati-io/Google-Maps-Scraper/blob/main/scraper_api_setup.md#setting-up-google-maps-scraper-api).
+> Google Maps Scraper API のセットアップに関する詳細ガイドは、[Step-by-Step Setup Guide](https://github.com/luminati-io/Google-Maps-Scraper/blob/main/scraper_api_setup.md#setting-up-google-maps-scraper-api) をご確認ください。
 
-**Key Input Parameters:**
+**主な入力パラメータ:**
 
 | **Parameter** | **Type** | **Description**                         | **Required** |
 |---------------|----------|-----------------------------------------|--------------|
-| `url`         | string   | Google Maps business URL               | Yes          |
-| `days_limit`  | number   | Number of days to retrieve reviews from | No           |
+| `url`         | string   | Google Maps のビジネスURL               | Yes          |
+| `days_limit`  | number   | レビューを取得する対象日数 | No           |
 
-**Sample Output Data:**
+**出力データのサンプル:**
 
 ```json
 {
@@ -133,11 +133,11 @@ You can collect detailed Google Maps reviews by simply providing a URL.
     }
   }
 ```
-You can view the full output by downloading [this sample JSON file](https://github.com/luminati-io/Google-Maps-Scraper/blob/main/sample_data/api_scraper_output.json).
+出力全体は、[このサンプルJSONファイル](https://github.com/luminati-io/Google-Maps-Scraper/blob/main/sample_data/api_scraper_output.json) をダウンロードして確認できます。
 
-**Code Example:**
+**コード例:**
 
-Here’s a Python script to collect Google Maps reviews and store results in a JSON file:
+次は、Google Maps のレビューを収集し、結果を JSON ファイルに保存する Python スクリプトです:
 
 ```python
 import requests
@@ -234,22 +234,22 @@ if __name__ == "__main__":
     reviews = brightdata.collect_reviews(urls_to_collect)
 ```
 
-**How the Code Works:**
-1. **API Token Required:** First, you'll need an API token. If you don't have one yet, follow our [Google Maps Scraper API setup guide](https://github.com/luminati-io/Google-Maps-Scraper/blob/main/scraper_api_setup.md#setting-up-google-maps-scraper-api).
-2. **Start Data Collection:** Pass your API token to the code, and it will initiate data collection with your specified parameters. This returns a `snapshot_id` that you'll use to track your request.
-3. **Wait for Results:** The data collection takes a few minutes to complete. During this time, our code continuously checks the `snapshot_id` status:
-    - Status "running" = Data is still being collected
-    - Status "ready" = Data collection is complete and saved to your JSON file
-4. **Additional Parameters:** You can customize your data collection by adding more parameters to the `_trigger_collection` function. Check the [next section](https://github.com/luminati-io/Google-Maps-Scraper?tab=readme-ov-file#customizing-data-collection-with-api-parameters) to see what parameters are available and learn about different data delivery methods.
+**コードの仕組み:**
+1. **API Token が必要:** まず API token が必要です。まだお持ちでない場合は、[Google Maps Scraper API setup guide](https://github.com/luminati-io/Google-Maps-Scraper/blob/main/scraper_api_setup.md#setting-up-google-maps-scraper-api) に従ってください。
+2. **データ収集の開始:** コードに API token を渡すと、指定したパラメータでデータ収集を開始します。これにより、リクエストを追跡するために使用する `snapshot_id` が返されます。
+3. **結果を待機:** データ収集の完了まで数分かかります。この間、コードは `snapshot_id` のステータスを継続的に確認します:
+    - ステータス "running" = データはまだ収集中です
+    - ステータス "ready" = データ収集が完了し、JSON ファイルに保存されました
+4. **追加パラメータ:** `_trigger_collection` 関数に追加のパラメータを指定して、データ収集をカスタマイズできます。利用可能なパラメータや各種データ配信方法については、[次のセクション](https://github.com/luminati-io/Google-Maps-Scraper?tab=readme-ov-file#customizing-data-collection-with-api-parameters) をご確認ください。
 
-### Customizing Data Collection with API Parameters
-Use the following API parameters to customize your data collection:
+### APIパラメータでデータ収集をカスタマイズする
+次の API パラメータを使用して、データ収集をカスタマイズできます:
 
 | **Parameter**       | **Type**   | **Description**                                                                                   | **Example**                                           |
 |---------------------|------------|---------------------------------------------------------------------------------------------------|-------------------------------------------------------|
-| `limit`             | `integer`  | Limit the number of results returned for each input.                                            | `limit=10`                                           |
-| `include_errors`    | `boolean`   | Include an error report in the output for troubleshooting.                                      | `include_errors=true`                                |
-| `notify`            | `url`      | URL where a notification is sent once the collection completes.                                  | `notify=https://notify-me.com/`                      |
-| `format`            | `enum`     | Format for data delivery. Supported formats: JSON, NDJSON, JSONL, CSV.                          | `format=json`|
+| `limit`             | `integer`  | 各入力に対して返される結果数を制限します。                                            | `limit=10`                                           |
+| `include_errors`    | `boolean`   | トラブルシューティングのため、出力にエラーレポートを含めます。                                      | `include_errors=true`                                |
+| `notify`            | `url`      | 収集が完了した際に通知を送信するURLです。                                  | `notify=https://notify-me.com/`                      |
+| `format`            | `enum`     | データ配信の形式です。対応形式: JSON, NDJSON, JSONL, CSV。                          | `format=json`|
 
-💡**Additional delivery methods:** You can choose to deliver the data via [webhook](https://docs.brightdata.com/scraping-automation/web-data-apis/web-scraper-api/overview#via-webhook) or through the [API](https://docs.brightdata.com/scraping-automation/web-data-apis/web-scraper-api/overview#via-api).
+💡**追加の配信方法:** データは [webhook](https://docs.brightdata.com/scraping-automation/web-data-apis/web-scraper-api/overview#via-webhook) 経由、または [API](https://docs.brightdata.com/scraping-automation/web-data-apis/web-scraper-api/overview#via-api) 経由で配信することも選択できます。
